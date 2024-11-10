@@ -11,7 +11,7 @@ struct SomeInterface {
     virtual int baz(int*, int&) = 0;
 };
 
-TEST_CASE("Example test", "[example]" ) {
+TEST_CASE("Example fakeIt test", "[example]" ) {
     Mock<SomeInterface> mock;
 
     When(Method(mock, foo).Using(Eq(0))).Return(42);
