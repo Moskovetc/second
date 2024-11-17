@@ -14,8 +14,9 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
 # executables
 add_subdirectory(src)
-add_executable(main main.cpp)
-target_link_libraries(main PRIVATE calculator)
+add_subdirectory(contrib)
+add_executable(main src/main.cpp)
+target_link_libraries(main PRIVATE calculator hw01)
 
 # tests
 enable_testing()

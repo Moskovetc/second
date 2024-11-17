@@ -1,14 +1,16 @@
-include(FetchCatch2)
-include(FetchFakeIT)
-
 set(TARGET_NAME run_tests)
 
 # add test sources here ... 
-add_executable(${TARGET_NAME} runner_tests.cpp)
-target_link_libraries(run_tests PRIVATE calculator Catch2::Catch2WithMain)
-target_include_directories(run_tests PRIVATE "${fakeit_SOURCE_DIR}/single_header/catch")
+add_executable(${TARGET_NAME} 
+    runner_tests.cpp 
+    ../src/calculator/tests/catch2_calculator_ops.cpp 
+    ../src/hw01/tests/catch2_hw01_ops.cpp
+)
+# Catch2 cmake helper functions
+include(${PROJECT_SOURCE_DIR}/contrib/Catch2/extras/Catch.cmake)
+target_link_libraries(${TARGET_NAME} PRIVATE calculator hw01 Catch2::Catch2WithMain)
+target_include_directories(${TARGET_NAME} PRIVATE ${PROJECT_SOURCE_DIR}/contrib/FakeIt/single_header/catch)
 
 # ctest -VV
 include(CTest)
-include(Catch)
 catch_discover_tests(${TARGET_NAME} EXTRA_ARGS -r console --abort)
