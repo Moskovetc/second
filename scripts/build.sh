@@ -2,7 +2,6 @@
 BUILD_DIR_NAME=build
 echo "start build..."
 
-string='My long string'
 if [[ $PWD == *"scripts"* ]]; then
   cd .. 
 fi 
