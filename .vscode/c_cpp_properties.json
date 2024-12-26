@@ -1,0 +1,26 @@
+{
+    "env": {
+        "myIncludePath": [
+            "${workspaceFolder}/src",
+            "${workspaceFolder}/build/contrib/Catch2/generated-includes",
+            "${workspaceFolder}/contrib/FakeIt/include",
+            "${workspaceFolder}/contrib/Catch2/src",
+            "${workspaceFolder}/contrib/FakeIt/single_header/catch"
+        ]
+    },
+    "configurations": [
+        {
+            "name": "Linux",
+            "compilerPath": "/usr/bin/gcc",
+            "includePath": [
+                "${myIncludePath}",
+                "/usr/include"
+            ],
+            "defines": [],
+            "cStandard": "c17",
+            "intelliSenseMode": "linux-clang-x64",
+            "cppStandard": "c++23"
+        }
+    ],
+    "version": 4
+}
