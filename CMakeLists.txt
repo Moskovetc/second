@@ -16,7 +16,4 @@ add_subdirectory(contrib)
 add_executable(main src/main.cpp)
 target_link_libraries(main PRIVATE calculator hw01 hw02)
 
-# tests
-enable_testing()
-# Catch2 cmake helper functions
-add_subdirectory(tests)
+include("cmake/tests.cmake")

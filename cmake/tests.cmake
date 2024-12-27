@@ -1,8 +1,10 @@
+# tests
+enable_testing()
+# Catch2 cmake helper functions
 set(TARGET_NAME run_tests)
 
 # add test sources here ... 
 add_executable(${TARGET_NAME}
-    runner_tests.cpp
     ../src/calculator/tests/catch2_calculator_ops.cpp
     ../src/hw01/tests/catch2_hw01_ops.cpp
     ../src/hw02/tests/catch2_hw02.cpp
